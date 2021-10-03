@@ -4,7 +4,8 @@ from django.db import models
 
 class Products(models.Model):
     name=models.CharField(max_length=30)
+    category=models.CharField(max_length=30)
     price=models.IntegerField()
     stock=models.IntegerField()
     description=models.TextField(max_length=50)
-    image=models.ImageField(upload_to='images')
+    image=models.ImageField(upload_to='static/images')

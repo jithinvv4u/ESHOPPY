@@ -2,11 +2,14 @@ from django.shortcuts import render,redirect
 from django.http.response import HttpResponse
 from .forms import *
 from django.contrib.auth import authenticate,login,logout
+from store.models import Products
 # from django.contrib import messages
 
 # Create your views here.
 def home(req):
-    return render(req,'index.html')
+    context={}
+    context['product_obj']=Products.objects.all()
+    return render(req,'index.html',context)
 
 def regCustView(req):
     context={}
@@ -45,3 +48,4 @@ def loginView(req):
 def logoutView(req):
     logout(req)
     return redirect('login')
+

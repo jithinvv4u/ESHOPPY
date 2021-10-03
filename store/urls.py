@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
-from accounts.views import *
+from .views import *
 
 urlpatterns = [
-    # path('regsell/',regSellView),
+    path('<int:id>/',details,name="details"),
 ]

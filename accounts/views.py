@@ -9,6 +9,7 @@ from store.models import Products
 def home(req):
     context={}
     context['product_obj']=Products.objects.all()
+    print(req.user)
     return render(req,'index.html',context)
 
 def regCustView(req):
@@ -39,7 +40,7 @@ def loginView(req):
             user=authenticate(username=uname,password=pwd)
             if user is not None:
                 login(req,user)
-                return HttpResponse('success')
+                return redirect('home')
             else:
                 return HttpResponse('failed')
         else:

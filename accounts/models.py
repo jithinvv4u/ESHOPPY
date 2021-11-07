@@ -5,3 +5,4 @@ class Customer(AbstractUser):
     phone=models.CharField(max_length=20)
 # class Seller(AbstractUser):
 #     phone=models.IntegerField(max_length=50)
+

@@ -9,3 +9,8 @@ class Products(models.Model):
     stock=models.IntegerField()
     description=models.TextField(max_length=50)
     image=models.ImageField(upload_to='static/images')
+
+class Cart(models.Model):
+    userid=models.ForeignKey(to='accounts.Customer',on_delete=models.CASCADE)
+    productid=models.ForeignKey(to='store.Products',on_delete=models.CASCADE)
+

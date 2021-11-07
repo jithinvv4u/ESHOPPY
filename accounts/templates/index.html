@@ -48,7 +48,6 @@
         <div class="row">
           
       {% block main %}
-          ESHOPPY HOME
         
         {% for p in product_obj %}
         <div class="col-md-3">
@@ -58,8 +57,8 @@
               <h5 class="card-title">{{p.name}}</h5>
               <p class="card-text">{{p.description}}</p>
               <p class="card-text">{{p.price}}</p>
-              <a href="#" class="btn btn-danger">Buy Now</a>
-              <a href="#" class="btn btn-warning">Add Cart</a>`
+              <a href="#" class="btn btn-danger" href="{% url 'store_cart' id=p.id %}" >Buy Now</a>
+              <a href="#" class="btn btn-warning">Add Cart</a>
             </div>
           </div>
       </div>
